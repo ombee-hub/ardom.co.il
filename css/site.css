@@ -187,6 +187,34 @@ strong, b { color: var(--ink); font-weight: 700; }
 .c-berry { --c: var(--berry); --c-soft: var(--berry-soft); --c-deep: var(--berry); }
 .c-gray { --c: var(--gray); --c-soft: var(--mist); --c-deep: #4f5f66; }
 
+/* ---------- המוצרים שלנו (מבנה אגרוסופט: שם → איור → טקסט → כפתור) ---------- */
+.prod-section { background: var(--mist); padding: clamp(56px, 7vw, 92px) 0; }
+.title-lines { text-align: center; margin-bottom: clamp(32px, 4vw, 46px); }
+.title-lines h2 { display: inline-flex; align-items: center; gap: 18px; font-size: clamp(28px, 3.4vw, 40px); color: var(--ink); }
+.title-lines h2::before, .title-lines h2::after { content: ""; width: 60px; height: 3px; border-radius: 2px; background: var(--teal); flex: none; }
+.title-lines .lead { max-width: 640px; margin: 12px auto 0; }
+.prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 0 auto; }
+.prod-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 22px 18px 24px; border-radius: 22px; text-decoration: none; color: inherit;
+  background: linear-gradient(180deg, #fff 0%, #eef8f8 100%); border: 1px solid rgba(28, 156, 156, .28); box-shadow: 0 12px 32px -20px rgba(22, 84, 105, .45);
+  transition: transform .28s var(--ease), border-color .28s, box-shadow .28s; }
+.prod-card:hover { transform: translateY(-7px); border-color: rgba(28, 156, 156, .6); box-shadow: 0 24px 50px -22px rgba(22, 84, 105, .55); }
+.prod-top { display: flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; margin-bottom: 10px; }
+.prod-ic { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: var(--teal-soft); color: var(--teal-deep); }
+.prod-ic svg { width: 20px; height: 20px; }
+.prod-top h3 { font-size: 20px; font-weight: 800; }
+.prod-illu { width: 100%; height: auto; margin-bottom: 12px; transition: transform .5s var(--ease); }
+.prod-card:hover .prod-illu { transform: scale(1.04); }
+.prod-card p { color: var(--muted); font-size: 16px; line-height: 1.65; flex: 1; margin: 0 0 16px; }
+.prod-arr { display: block; align-self: stretch; padding: 11px 18px; border-radius: var(--btn-radius); font-weight: 800; font-size: 16px; color: #fff;
+  background: linear-gradient(135deg, var(--navy), var(--teal-deep)); box-shadow: 0 3px 10px rgba(22, 84, 105, .18); transition: box-shadow .25s, transform .25s; }
+.prod-card:hover .prod-arr { box-shadow: 0 8px 18px rgba(22, 84, 105, .4); transform: translateY(-1px); }
+@media (max-width: 1100px) { .prod-grid { grid-template-columns: repeat(2, 1fr); max-width: 900px; } .prod-illu { max-width: 80%; } }
+@media (max-width: 600px) {
+  .prod-grid { grid-template-columns: 1fr; max-width: 380px; gap: 14px; }
+  .prod-card { padding: 16px 14px 18px; } .prod-illu { max-width: 70%; margin-bottom: 8px; }
+  .title-lines h2::before, .title-lines h2::after { width: 30px; }
+}
+
 /* ---------- רצועה כהה ---------- */
 .band { position: relative; padding: clamp(56px, 7vw, 92px) 0; overflow: hidden; background: var(--navy); color: rgba(255, 255, 255, .86); }
 .band h2, .band h3, .band strong { color: #fff; }
